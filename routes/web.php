@@ -1,7 +1,20 @@
 <?php
 
 
-Route::post("/projects","ProjectController@store");
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::post("/projects","ProjectController@store");
+    Route::get("/projects/create","ProjectController@create");
+    Route::get("/project/{project}","ProjectController@show");
+});
 
-Route::get("/projects","ProjectController@index");
-Route::get("/projects/{project}","ProjectController@show");
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
