@@ -15,11 +15,10 @@
                     <div class="lg:w-3/4 px-3">
                         <div class="mb-8">
                             <h2 class="text-grey font-normal text-lg mb-3">Tasks</h2>
-                            <div class="bg-white mr-4 rounded shadow p-3 mb-2">Bkag Blah</div>
-                            <div class="bg-white mr-4 rounded shadow p-3 mb-2">Bkag Blah</div>
-                            <div class="bg-white mr-4 rounded shadow p-3 mb-2">Bkag Blah</div>
-                            <div class="bg-white mr-4 rounded shadow p-3 mb-2">Bkag Blah</div>
-                            <div class="bg-white mr-4 rounded shadow p-3">Bkag Blah</div>
+                            @foreach ($project->tasks as $task)
+                                <div class="bg-white mr-4 rounded shadow p-3 mb-2">{{ $task->body }}</div>
+                            @endforeach
+                          
                         </div>
                         <div>
                             <h2 class="text-grey font-normal text-lg mb-3">General Notes</h2>
